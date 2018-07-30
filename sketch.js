@@ -4,11 +4,6 @@ let left, right;
 
 var lscore, rscore;
 
-function preload () {
-	 soundFormats('mp3', 'ogg');
-	 ding = loadSound('ding.mp3');
-}
-
 function setup() {
   createCanvas(800, 600);
   ball = new Ball();
@@ -16,7 +11,6 @@ function setup() {
   right = new Paddle(false);
 	lscore = 0;
 	rscore = 0;
-	ding.setVolume(0.2);
 }
 
 function draw() {
