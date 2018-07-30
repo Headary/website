@@ -29,13 +29,11 @@ class Ball {
 
     if (this.x < 0) {
       this.reset();
-      ding.play();
       rscore++;
     }
 
     if (this.x > width) {
       this.reset();
-      ding.play();
       lscore++;
     }
   }
