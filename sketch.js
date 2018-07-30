@@ -6,7 +6,7 @@ var lscore, rscore;
 
 function preload () {
 	 soundFormats('mp3', 'ogg');
-	 ding = loadSound('assets/ding.mp3');
+	 ding = loadSound('ding.mp3');
 }
 
 function setup() {
