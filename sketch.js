@@ -16,5 +16,7 @@ function setup() {
     let button = createButton("Play Game!");
     button.class("buttons");
     button.parent("item_container" + i);
+    
+    console.log("Creating item");
   }
 }
