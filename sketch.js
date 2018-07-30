@@ -8,6 +8,7 @@ function setup() {
     div.id("item_container" + i);
     div.class("item_container");
     divs[i] = div;
+    div.parent(container);
 
     let text = createP("Click!");
     text.class("game_names");
