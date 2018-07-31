@@ -27,5 +27,5 @@ function setup() {
 
 function divPressed(index) {
   let folder = data.games[index].folder;
-  window.open("https://headary.github.io/website/" + folder);
+  window.open("https://headary.github.io/website/" + folder, "_self");
 }
