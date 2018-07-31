@@ -12,11 +12,12 @@ let g = 1;
 var sliders = [];
 var textVal = [];
 
+let center;
+
 function setup() {
-  let cnv = createCanvas(900, 750);
-	let x = (windowWidth - width) / 2;
-	let y = (windowHeight + 100 - height) / 2;
-	cnv.position(x, y);
+  center = document.getElementById('center');
+  let cnv = createCanvas(windowWidth, 0.9 * windowHeight);
+  cnv.style('display', 'block');
   cSliders();
   reset();
 }
@@ -51,8 +52,8 @@ function reset() {
   r2 = sliders[1].value();
   m1 = sliders[2].value();
   m2 = sliders[3].value();
-  a1 = sliders[4].value();
-  a2 = sliders[5].value();
+  a1 = (sliders[4].value() * PI) / 180;
+  a2 = (sliders[5].value() * PI) / 180;
   g = sliders[6].value();
   a1_v = 0;
   a2_v = 0;
@@ -80,6 +81,10 @@ function calcute() {
 }
 
 function cSliders() {
+
+  let title = createP("Properties");
+  title.class("title");
+
   let mainDiv = createDiv();
   mainDiv.class("mainDiv");
 
@@ -102,11 +107,11 @@ function cSliders() {
   textVal[3] = createP();
 
   labels[4] = createP("1. start angle: ");
-  sliders[4] = createSlider(-PI, PI, PI / 2, 0.1);
+  sliders[4] = createSlider(-180, 180, 90, 1);
   textVal[4] = createP();
 
   labels[5] = createP("1. start angle: ");
-  sliders[5] = createSlider(-PI, PI, PI / 2, 0.1);
+  sliders[5] = createSlider(-180, 180, 90, 1);
   textVal[5] = createP();
 
   labels[6] = createP("gravity: ");
