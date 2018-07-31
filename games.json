@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "name" : "Pong",
+      "folder" : "Pong",
+      "description" : "You have two paddles and one ball. Try to get the onto the other side and win."
+    },
+    {
+      "name" : "Flappy Bird",
+      "folder" : "FlappyBird",
+      "description" : "Jump! And don't hit the wall."      
+    }
+  ]
+}
