@@ -9,7 +9,7 @@
       "name" : "Flappy Bird",
       "folder" : "FlappyBird",
       "description" : "Jump! And don't hit the wall."
-    }
+    },
     {
       "name" : "Double Pendulum",
       "folder" : "DoublePendulum",
