@@ -11,7 +11,7 @@ function setup() {
 
     let div = createDiv();
     div.id("item_container_" + i);
-    div.class("item_container");
+    div.class("item_container whitebutton");
     div.parent("grid_container");
     div.mousePressed(function () {divPressed(i);})
 
@@ -27,5 +27,5 @@ function setup() {
 
 function divPressed(index) {
   let folder = data.games[index].folder;
-  window.open("https://headary.github.io/website/" + folder, "_self");
+  window.open(window.location.href + folder, "_self");
 }

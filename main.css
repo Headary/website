@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   background-color: #333333;
 }
 
@@ -26,8 +26,6 @@ h1 {
 }
 
 .grid_container {
-  /* background-color: #999999; */
-  color: #333333ee;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,7 +35,6 @@ h1 {
 }
 
 .item_container {
-  background-color: white;
   text-align: center;
   padding: 5px 5px;
   font-family: 'Roboto', sans-serif;
@@ -47,9 +44,6 @@ h1 {
   justify-content: center;
 }
 
-.item_container:hover {
-  background-color: #bbbbbb;
-}
 
 .game_name {
   font-size: 200%;
@@ -59,4 +53,26 @@ h1 {
 .game_desc {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.whitebutton {
+  border: 2px solid white;
+  color: white;
+  transition: color 300ms;
+}
+
+.whitebutton:hover {
+  background-color: white;
+  color:#333333;
+}
+
+.blackbutton {
+  border: 2px solid #333333;
+  color: #333333;
+  transition: color 300ms;
+}
+
+.blackbutton:hover {
+  background-color: #333333;
+  color: white;
 }
