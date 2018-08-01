@@ -15,5 +15,10 @@
       "folder" : "DoublePendulum",
       "description" : "Be Satisfied"
     }
+    {
+      "name" : "The Snake",
+      "folder" : "snakeGame",
+      "description" : "Get apples and grow!"
+    }
   ]
 }
