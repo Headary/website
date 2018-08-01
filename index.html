@@ -6,9 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="main.css">
-	<link id="theme" rel="stylesheet" href="dark.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Ubuntu" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/dark.css" id="theme">
+	<link rel="stylesheet" href="css/animations.css">
 
 	<title>JS games and codes</title>
 
@@ -29,7 +31,7 @@
 		</div>
 
 		<label class="switch">
-  <input type="checkbox" id="color_checkbox" onclick="switchTheme(this)">
+  <input type="checkbox" id="color_checkbox" onload="switchTheme(this)" onclick="switchTheme(this)">
   <span class="slider round"></span>
 </label>
 	</center>

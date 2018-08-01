@@ -9,15 +9,15 @@ canvas {
   margin: auto;
 }
 
-h1 {
-  font-size: 380%;
-  transition: color 300ms;
-}
-
 .header {
   margin-top: 100px;
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
+  transition: color 300ms;
+}
+
+.header>h1 {
+  font-size: 380%;
   transition: color 300ms;
 }
 

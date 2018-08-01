@@ -29,15 +29,15 @@ function setup() {
 
 function divPressed(index) {
   let folder = data.games[index].folder;
-  window.open(window.location.href + folder, "_self");
+  window.open(window.location.href + "codes/" + folder, "_self");
 }
 
 function switchTheme(checkbox) {
   if (checkbox.checked) {
-    document.getElementById('theme').setAttribute('href', 'light.css');
+    document.getElementById('theme').setAttribute('href', 'css/light.css');
     console.log("light " + this.checked);
   } else {
-    document.getElementById('theme').setAttribute('href', 'dark.css');
+    document.getElementById('theme').setAttribute('href', 'css/dark.css');
     console.log("dark " + this.checked);
   }
 }
