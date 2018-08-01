@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="main.css">
+	<link id="theme" rel="stylesheet" href="dark.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Ubuntu" rel="stylesheet">
 
 	<title>JS games and codes</title>
@@ -16,14 +18,21 @@
 	<script src="sketch.js"></script>
 
 </head>
+
 <body>
 	<div class="header">
 		<h1>JS games and other codes in browser</h1>
 		<p>This page is random set of fun codes. Feel free to explore!</p>
 	</div>
-<center>
-<div class="grid_container" id="grid_container">
-</div>
-</center>
+	<center>
+		<div class="grid_container" id="grid_container">
+		</div>
+
+		<label class="switch">
+  <input type="checkbox" id="color_checkbox" onclick="switchTheme(this)">
+  <span class="slider round"></span>
+</label>
+	</center>
 </body>
+
 </html>

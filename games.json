@@ -1,24 +1,23 @@
 {
-  "games": [
-    {
-      "name" : "Pong",
-      "folder" : "Pong",
-      "description" : "You have two paddles and one ball. Try to get the onto the other side and win."
+  "games": [{
+      "name": "Pong",
+      "folder": "Pong",
+      "description": "You have two paddles and one ball. Try to get the onto the other side and win."
     },
     {
-      "name" : "Flappy Bird",
-      "folder" : "FlappyBird",
-      "description" : "Jump! And don't hit the wall."
+      "name": "Flappy Bird",
+      "folder": "FlappyBird",
+      "description": "Jump! And don't hit the wall."
     },
     {
-      "name" : "Double Pendulum",
-      "folder" : "DoublePendulum",
-      "description" : "Be Satisfied"
+      "name": "Double Pendulum",
+      "folder": "DoublePendulum",
+      "description": "Be Satisfied"
     },
     {
-      "name" : "The Snake",
-      "folder" : "snakeGame",
-      "description" : "Get apples and grow!"
+      "name": "The Snake",
+      "folder": "snakeGame",
+      "description": "Get apples and grow!"
     }
   ]
 }

@@ -11,9 +11,11 @@ function setup() {
 
     let div = createDiv();
     div.id("item_container_" + i);
-    div.class("item_container whitebutton");
+    div.class("item_container button");
     div.parent("grid_container");
-    div.mousePressed(function () {divPressed(i);})
+    div.mousePressed(function() {
+      divPressed(i);
+    })
 
     let name = createP(game.name);
     name.class("game_name");
@@ -28,4 +30,14 @@ function setup() {
 function divPressed(index) {
   let folder = data.games[index].folder;
   window.open(window.location.href + folder, "_self");
+}
+
+function switchTheme(checkbox) {
+  if (checkbox.checked) {
+    document.getElementById('theme').setAttribute('href', 'light.css');
+    console.log("light " + this.checked);
+  } else {
+    document.getElementById('theme').setAttribute('href', 'dark.css');
+    console.log("dark " + this.checked);
+  }
 }
