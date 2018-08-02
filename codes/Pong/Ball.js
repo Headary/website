@@ -42,15 +42,16 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
     let a = random(-PI / 4, PI / 4);
-    this.xspeed = this.speed * cos(a);
-    this.yspeed = this.speed * sin(a);
+    this.xspeed = this.speed / 2 * cos(a);
+    this.yspeed = this.speed / 2 * sin(a);
     if (random(1) > 0.5) this.xspeed *= -1;
   }
 
   checkPaddleLeft(p) {
     if (this.y < p.y + p.h / 2 && this.y > p.y - p.h / 2 && this.x - this.r < p.x + p.w / 2) {
       if (this.x > p.x) {
-        this.bouncePaddle(p, 1);
+        if (p.enableBot) this.bouncePaddle(p, 1, true);
+        else this.bouncePaddle(p, 1, false);
         this.x = p.x + p.w / 2 + this.r;
       }
     }
@@ -59,16 +60,20 @@ class Ball {
   checkPaddleRight(p) {
     if (this.y < p.y + p.h / 2 && this.y > p.y - p.h / 2 && this.x + this.r > p.x - p.w / 2) {
       if (this.x < p.x) {
-        this.bouncePaddle(p, -1);
+        if (p.enableBot) this.bouncePaddle(p, -1, true);
+        else this.bouncePaddle(p, -1, false);
         this.x = p.x - p.w / 2 - this.r;
       }
     }
   }
 
-  bouncePaddle(p, dir) {
-    let diff = this.y - (p.y - p.h/2);
-    let angle = map(diff, 0, p.h, -PI/4, PI/4);
-    this.xspeed = this.speed * cos(angle) * dir;
-    this.yspeed = this.speed * sin(angle);
+  bouncePaddle(p, dir, rnd) {
+    var diff = 0;
+    if (rnd) diff = random(p.h);
+    else diff = this.y - (p.y - p.h / 2);
+
+    let a = map(diff, 0, p.h, -PI / 4, PI / 4);
+    this.xspeed = this.speed * cos(a) * dir;
+    this.yspeed = this.speed * sin(a);
   }
 }

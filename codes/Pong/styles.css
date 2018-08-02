@@ -1,0 +1,65 @@
+html {
+  overflow: auto;
+}
+
+body {
+  align-items: center;
+}
+
+.p5Canvas {
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+p {
+  display: inline-block;
+}
+
+.wrapper {
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.label {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 200%;
+  font-weight: bold;
+  margin: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item-container>p {
+  margin: auto;
+}
+
+.button {
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 110%;
+  font-family: "Roboto", sans-serif;
+  transition: background 300ms, color 300ms;
+  text-align: center;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background-color: white;
+  user-select: none;
+}
+
+.button:hover {
+  color: white;
+  background-color: #333;
+}
+
+.button:active {
+  background-color: #222;
+}

@@ -32,6 +32,7 @@ canvas {
   grid-auto-rows: minmax(200px, auto);
   grid-gap: 1em;
   margin-top: 100px;
+  padding-bottom: 20px;
 }
 
 .item_container {
