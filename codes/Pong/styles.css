@@ -9,11 +9,15 @@ body {
 .p5Canvas {
   display: block;
   margin: auto;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 p {
   display: inline-block;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .wrapper {

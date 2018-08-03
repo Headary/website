@@ -8,7 +8,9 @@ var tVals = [];
 var cnv;
 
 function setup() {
-  cnv = createCanvas(800, 600);
+  let w = window.innerWidth * 0.75;
+  let h = w * 3 / 4;
+  cnv = createCanvas(w, h);
   ball = new Ball();
   left = new Paddle(true);
   right = new Paddle(false);
@@ -48,6 +50,8 @@ function keyPressed() {
 
   if (key == 'i' || key == 'I') right.move(-right.speed);
   else if (key == 'k' || key == 'K') right.move(right.speed);
+
+  if (key == 'R') resetGame();
 }
 
 function keyReleased() {
@@ -58,11 +62,6 @@ function keyReleased() {
 function resetGame() {
   left.w = slider[4].value();
   right.w = slider[5].value();
-
-  let w = slider[8].value();
-  let h = slider[9].value();
-  cnv.size(w, h);
-  right.x = width - right.w;
 
   left.reset(true);
   right.reset(false);

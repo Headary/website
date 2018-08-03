@@ -1,4 +1,13 @@
 function cSliders() {
+  let controlsDiv = createDiv();
+  controlsDiv.class("wrapper");
+  let contrLab = createP("Controls");
+  contrLab.parent(controlsDiv);
+  contrLab.class("label");
+  createP("Up: W, Down: S").parent(controlsDiv).class("bold");
+  createP("Up: I, Down: K").parent(controlsDiv).class("bold");
+  createP("Reset: R").parent(controlsDiv).class("bold");
+
   let windowDiv = createDiv();
   windowDiv.class("wrapper");
 
@@ -135,7 +144,7 @@ function updateTVal(index) {
 function changeWinSize() {
   let w = slider[8].value();
   let h = slider[9].value();
-  cnv.size(w, h);
+  resizeCanvas(w, h);
   right.x = width - right.w;
 }
 
