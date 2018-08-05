@@ -18,6 +18,11 @@
       "name": "The Snake",
       "folder": "snakeGame",
       "description": "Get apples and grow!"
+    },
+    {
+      "name": "Recamn's sequnce",
+      "folder": "Recamns_sequence",
+      "description": "Watch mathematical sequence represented by circles."
     }
   ]
 }
