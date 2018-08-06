@@ -13,7 +13,7 @@ function setup() {
     div.id("item_container_" + i);
     div.class("item_container button");
     div.parent("grid_container");
-    div.mousePressed(function() {
+    div.mouseClicked(function() {
       divPressed(i);
     })
 
