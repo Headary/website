@@ -23,6 +23,14 @@
       "name": "Recamn's sequnce",
       "folder": "Recamns_sequence",
       "description": "Watch mathematical sequence represented by circles."
+    }, {
+      "name": "Circle overlay",
+      "folder": "image_proc/circle_overlay",
+      "description": "Randomly generates circles that overlay image and creates blur effect."
+    }, {
+      "name": "Circle packing",
+      "folder": "image_proc/circle_pack",
+      "description": "Creates circles that grow over time."
     }
   ]
 }

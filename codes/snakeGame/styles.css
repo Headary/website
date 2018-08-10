@@ -1,0 +1,10 @@
+body {
+  align-items: center;
+  justify-content: center;
+}
+
+.p5Canvas {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
