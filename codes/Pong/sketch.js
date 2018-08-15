@@ -8,7 +8,7 @@ var tVals = [];
 var cnv;
 
 function setup() {
-  let w = window.innerWidth * 0.75;
+  let w = window.innerWidth * 0.8;
   let h = w * 3 / 4;
   cnv = createCanvas(w, h);
   ball = new Ball();

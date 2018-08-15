@@ -7,13 +7,15 @@ var cols;
 var rows;
 
 function setup() {
-  let h = window.innerHeight;
-  let w = h / 9 * 16;
+  let h = window.innerHeight * 0.9;
+  let w = h / 3 * 4;
   if (w > window.innerWidth) {
     w = window.innerWidth;
-    h = w / 16 * 9;
+    h = w / 4 * 3;
   }
-  scl = w / 32;
+  floor(w);
+  floor(h);
+  scl = floor(w / 32);
   createCanvas(w, h);
   cols = floor(width / scl);
   rows = floor(height / scl);
