@@ -24,3 +24,12 @@ function btnDownload() {
   var btnDwn = document.getElementById('btn-download');
   btnDwn.href = canvas.toDataURL("image/png");
 }
+
+function colFill() {
+    var i = document.getElementById('colselect').selectedIndex;
+  for (var x = 0; x < tilesCount; x++) {
+    for (var y = 0; y < tilesCount; y++) {
+      grid[x][y].changeColor(colors[i]);
+    }
+  }
+}
