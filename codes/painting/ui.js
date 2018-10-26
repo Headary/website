@@ -5,7 +5,7 @@ function createUI() {
 }
 
 function addOption(col) {
-  var x = document.getElementById("select");
+  var x = document.getElementById("colselect");
   var option = document.createElement("option");
   //option.text = option.value = "Kiwi";
   option.text =
@@ -18,4 +18,9 @@ function addOption(col) {
     ") N.: " + col.index;
   option.setAttribute("class", "option");
   x.add(option);
+}
+
+function btnDownload() {
+  var btnDwn = document.getElementById('btn-download');
+  btnDwn.href = canvas.toDataURL("image/png");
 }

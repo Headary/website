@@ -26,7 +26,7 @@ function setup() {
   for (let x = 0; x < tilesCount; x++) {
     grid[x] = [];
     for (let y = 0; y < tilesCount; y++) {
-      grid[x][y] = new Tile(x * scl, y * scl, tileWidth, colors[4]);
+      grid[x][y] = new Tile(x * scl, y * scl, tileWidth, colors[4], scl);
       grid[x][y].show();
       //console.log("Tile!" + x + " | " +y);
     }
@@ -48,7 +48,7 @@ function mousePressed() {
 }
 
 function setCol() {
-  var i = document.getElementById('select').selectedIndex;
+  var i = document.getElementById('colselect').selectedIndex;
   selectedColor = colors[i];
   //console.log("set col");
 }

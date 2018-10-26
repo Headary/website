@@ -111,3 +111,7 @@ body {
 .button:active {
   background-color: #222;
 }
+
+a {
+  text-decoration: none;
+}
