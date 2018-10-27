@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<div class="content">
+	<div class="top-content">
 		<div id="paint" class="paint">
 
 		</div>
@@ -37,20 +37,29 @@
 			<div class="button" onclick="colFill()">
 				<p>Vyplnit vybranou barvou</p>
 			</div>
+			<hr class="line">
 			<div class="button" onclick="showHexaGrid()">
 				<p>Ukázat zápis barev v Hexa</p>
 			</div>
 			<div class="button" onclick="showIndexGrid()">
 				<p>Ukázat čísla barev podle tabulky</p>
 			</div>
+			<hr class="line">
 			<a href="#" id='btn-download' download="image.png">
-				<div class="button" download="image.png" onclick="btnDownload()" >
+				<div class="button" download="image.png" onclick="btnDownload()">
 					<p>Uložit</p>
 				</div>
 			</a>
 		</div>
 	</div>
-
+	<div class="bottom-content">
+		<div class="button" onclick="countRepeatingIndex()">
+			<p>Vygenerovat zkomprimovaná hexadecimální čísla.</p>
+		</div>
+		<div class="compiledHexa">
+			<p id="shortenHexa"></p>
+		</div>
+	</div>
 </body>
 
 </html>

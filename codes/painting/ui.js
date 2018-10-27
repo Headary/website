@@ -12,9 +12,9 @@ function addOption(col) {
     col.name +
     " (#" +
     (('00' +
-      col.r.toString(16)).slice(-2) +
-    ('00' + col.g.toString(16)).slice(-2) +
-    ('00' + col.b.toString(16)).slice(-2)).toUpperCase() +
+        col.r.toString(16)).slice(-2) +
+      ('00' + col.g.toString(16)).slice(-2) +
+      ('00' + col.b.toString(16)).slice(-2)).toUpperCase() +
     ") N.: " + col.index;
   option.setAttribute("class", "option");
   x.add(option);
@@ -26,7 +26,7 @@ function btnDownload() {
 }
 
 function colFill() {
-    var i = document.getElementById('colselect').selectedIndex;
+  var i = document.getElementById('colselect').selectedIndex;
   for (var x = 0; x < tilesCount; x++) {
     for (var y = 0; y < tilesCount; y++) {
       grid[x][y].changeColor(colors[i]);
