@@ -23,6 +23,11 @@
       "name": "Recamn's sequnce",
       "folder": "Recamns_sequence",
       "description": "Watch mathematical sequence represented by circles."
+    },
+    {
+      "name": "Pixel Painting"
+      "folder": "painting"
+      "description": "Learn, how images are coded and compress your own 8x8 image."
     }
   ]
 }
