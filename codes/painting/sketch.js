@@ -149,7 +149,8 @@ function countRepeatingIndex() {
       hexaIndexString = parseInt(lastFourCharracters, 2).toString(16).toUpperCase() + hexaIndexString;
     }
     shortenHexa += hexaIndexString + ", ";
-    document.getElementById("shortenHexa").innerHTML = shortenHexa;
     //console.log(shortenIndexArray[i].count + " * " + shortenIndexArray[i].index + " | " + hexaIndexString);
   }
+  shortenHexa = shortenHexa.slice(0, -2);
+  document.getElementById("shortenHexa").innerHTML = shortenHexa;
 }

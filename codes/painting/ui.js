@@ -1,4 +1,3 @@
-var name;
 var r, g, b;
 var colPick;
 var x;
@@ -7,7 +6,7 @@ function createUI() {
   for (var i = 0; i < colors.length; i++) {
     addOption(colors[i]);
   }
-  name = document.getElementById("colname").value
+
   r = document.getElementById("rrange");
   g = document.getElementById("grange");
   b = document.getElementById("brange");
@@ -44,7 +43,7 @@ function colFill() {
 }
 
 function addColor() {
-  colors.push(new ColorType(name, parseInt(r.value, 10), parseInt(g.value, 10), parseInt(b.value, 10), colors.length));
+  colors.push(new ColorType(document.getElementById("colname").value, parseInt(r.value, 10), parseInt(g.value, 10), parseInt(b.value, 10), colors.length));
   addOption(colors[colors.length - 1]);
   // console.log(colors[colors.length - 1]);
 }
