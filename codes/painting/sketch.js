@@ -15,6 +15,8 @@ function setup() {
   createCanvas(size, size).parent(document.getElementById('paint'));
   background(51);
 
+  x = document.getElementById("colselect");
+
   colors.push(new ColorType("Černá", 00, 00, 00, colors.length));
   colors.push(new ColorType("Červená", 255, 00, 00, colors.length));
   colors.push(new ColorType("Zelená", 00, 255, 00, colors.length));

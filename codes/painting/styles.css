@@ -127,9 +127,51 @@ a {
   text-decoration: none;
 }
 
-.line {
+.sliders {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  -webkit-appearance: none;
   width: 80%;
-  height: 3px;
+  height: 20px;
+  background: white;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 25px;
+  background: #515151;
+  border-color: #444;
+  cursor: pointer;
+}
+
+.inputfield:hover {
+  background: #CCC;
+  color: #444;
+}
+
+.inputfield::placeholder {
+  color: #666;
+}
+
+.line {
+  width: 90%;
+  height: 2px;
   border-radius: 10px;
   background: black;
 }

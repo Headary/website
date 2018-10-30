@@ -1,20 +1,27 @@
+var name;
+var r, g, b;
+var x;
+
 function createUI() {
   for (var i = 0; i < colors.length; i++) {
     addOption(colors[i]);
   }
+  name = document.getElementById("colname").value
+  r = document.getElementById("rrange");
+  g = document.getElementById("grange");
+  b = document.getElementById("brange");
 }
 
 function addOption(col) {
-  var x = document.getElementById("colselect");
   var option = document.createElement("option");
   //option.text = option.value = "Kiwi";
   option.text =
     col.name +
     " (#" +
-    (('00' +
+    (('0000' +
         col.r.toString(16)).slice(-2) +
-      ('00' + col.g.toString(16)).slice(-2) +
-      ('00' + col.b.toString(16)).slice(-2)).toUpperCase() +
+      ('0000' + col.g.toString(16)).slice(-2) +
+      ('0000' + col.b.toString(16)).slice(-2)).toUpperCase() +
     ") N.: " + col.index;
   option.setAttribute("class", "option");
   x.add(option);
@@ -32,4 +39,14 @@ function colFill() {
       grid[x][y].changeColor(colors[i]);
     }
   }
+}
+
+function addColor() {
+  colors.push(new ColorType(name, parseInt(r.value, 10), parseInt(g.value, 10), parseInt(b.value, 10), colors.length));
+  addOption(colors[colors.length - 1]);
+  console.log(colors[colors.length - 1]);
+}
+
+function colFieldChange() {
+
 }
