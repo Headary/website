@@ -38,6 +38,8 @@ function setup() {
 
   createUI();
   setCol();
+
+  colFieldChange();
 }
 
 function mousePressed() {

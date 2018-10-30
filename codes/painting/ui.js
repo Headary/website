@@ -1,5 +1,6 @@
 var name;
 var r, g, b;
+var colPick;
 var x;
 
 function createUI() {
@@ -10,6 +11,7 @@ function createUI() {
   r = document.getElementById("rrange");
   g = document.getElementById("grange");
   b = document.getElementById("brange");
+  colPick = document.getElementById("colorPick");
 }
 
 function addOption(col) {
@@ -44,9 +46,13 @@ function colFill() {
 function addColor() {
   colors.push(new ColorType(name, parseInt(r.value, 10), parseInt(g.value, 10), parseInt(b.value, 10), colors.length));
   addOption(colors[colors.length - 1]);
-  console.log(colors[colors.length - 1]);
+  // console.log(colors[colors.length - 1]);
 }
 
 function colFieldChange() {
-
+  let colPickName = "#" +
+   (('0000' + parseInt(r.value, 10).toString(16)).slice(-2) +
+    ('0000' + parseInt(g.value, 10).toString(16)).slice(-2) +
+    ('0000' + parseInt(b.value, 10).toString(16)).slice(-2)).toUpperCase();
+  colorPick.style.backgroundColor = colPickName;
 }

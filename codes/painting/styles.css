@@ -30,6 +30,14 @@ body {
   width: 100%;
 }
 
+.bottom-content>p {
+  font-family: "Ubuntu";
+  font-size: 120%;
+  text-align: center;
+  width: 100%;
+  margin: 10px;
+}
+
 .wrapper {
   width: 33%;
   text-align: center;
@@ -49,7 +57,7 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:850px) {
   .top-content {
     align-items: center;
     justify-content: center;
@@ -114,12 +122,14 @@ body {
   user-select: none;
 }
 
+@media only screen and (min-width:736px) {
 .button:hover {
   color: white;
   background-color: #444;
-}
+}}
 
 .button:active {
+  color: white;
   background-color: #222;
 }
 
@@ -130,6 +140,7 @@ a {
 .sliders {
   width: 100%;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
@@ -143,26 +154,37 @@ a {
 
 .slider {
   -webkit-appearance: none;
-  width: 80%;
+  width: 65%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   height: 20px;
   background: white;
   outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: .3s;
+  transition: background 300ms, color 300ms;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 80%;
+  width: 25px;
   height: 25px;
-  background: #515151;
-  border-color: #444;
+  background: #FFF;
+  border: 2px solid #444;
   cursor: pointer;
 }
 
+.inputfield {
+    vertical-align: middle;
+    font-size: 150%
+    padding: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .inputfield:hover {
-  background: #CCC;
+  background: #EEE;
   color: #444;
+  transition: background 300ms, color 300ms;
 }
 
 .inputfield::placeholder {
@@ -172,8 +194,25 @@ a {
 .line {
   width: 90%;
   height: 2px;
-  border-radius: 10px;
   background: black;
+}
+
+#colorPick {
+  transition: none;
+}
+
+.linespace {
+  height: 15px;
+}
+
+#specialline {
+  display: none;
+}
+
+@media only screen and (max-width:850px) {
+  #specialline {
+    display: block;
+  }
 }
 
 .compiledHexa {

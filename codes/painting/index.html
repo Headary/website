@@ -28,7 +28,7 @@
 
 		</div>
 		<div class="section">
-			<p>Colors:</p>
+			<p>Barvy:</p>
 
 			<div class="custom-select-wrapper">
 				<select class="custom-select" id='colselect' onchange="setCol()">
@@ -36,23 +36,6 @@
 			</div>
 			<div class="button" onclick="colFill()">
 				<p>Vyplnit vybranou barvou</p>
-			</div>
-			<div class="sliders">
-				<input type="text" placeholder="Color Name" value="" id="colname" class="inputfield button">
-			</div>
-			<div class="sliders">
-				<div class="slider-container">
-					<input type="range" min="0" max="255" value="120" class="slider button" id="rrange">
-				</div>
-				<div class="slider-container">
-					<input type="range" min="0" max="255" value="120" class="slider button" id="grange">
-				</div>
-				<div class="slider-container">
-					<input type="range" min="0" max="255" value="120" class="slider button" id="brange">
-				</div>
-			</div>
-			<div class="button" onclick="addColor()">
-				<p>Přidat barvu</p>
 			</div>
 			<a href="#" id='btn-download' download="image.png">
 				<div class="button" download="image.png" onclick="btnDownload()">
@@ -62,13 +45,34 @@
 		</div>
 	</div>
 	<div class="bottom-content">
-			<div class="button" onclick="showHexaGrid()">
-				<p>Ukázat zápis barev v Hexa</p>
-			</div>
-			<div class="button" onclick="showIndexGrid()">
-				<p>Ukázat čísla barev podle tabulky</p>
-			</div>
-			<hr class="line">
+		<div class="linespace" id="specialline"><hr class="line"></div>
+		<p>Jméno barvy:</p>
+		<input type="text" placeholder="Jméno barvy" value="" id="colname" class="inputfield button">
+		<div class="linespace"></div>
+		<div class="slider-container">
+			<input type="range" min="0" max="255" value="255" class="slider button" id="rrange" oninput="colFieldChange()" onchange="colFieldChange()">
+		</div>
+		<div class="slider-container">
+			<input type="range" min="0" max="255" value="20" class="slider button" id="grange" oninput="colFieldChange()" onchange="colFieldChange()">
+		</div>
+		<div class="slider-container">
+			<input type="range" min="0" max="255" value="180" class="slider button" id="brange" oninput="colFieldChange()" onchange="colFieldChange()">
+		</div>
+		<div class="slider button" id="colorPick"></div>
+		<div class="linespace"></div>
+		<div class="button" onclick="addColor()">
+			<p>Přidat barvu</p>
+		</div>
+
+		<hr class="line ">
+
+		<div class="button" onclick="showHexaGrid()">
+			<p>Ukázat zápis barev v Hexa</p>
+		</div>
+		<div class="button" onclick="showIndexGrid()">
+			<p>Ukázat čísla barev podle tabulky</p>
+		</div>
+		<hr class="line">
 		<div class="button" onclick="countRepeatingIndex()">
 			<p>Vygenerovat zkomprimovaná hexadecimální čísla.</p>
 		</div>
