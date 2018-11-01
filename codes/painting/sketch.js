@@ -8,6 +8,8 @@ var selectedColor;
 
 var colorGridOn;
 
+
+var url_string, url, t; // t - tiles count from url
 function setup() {
   let smaller = windowHeight;
   if (windowHeight > windowWidth) smaller = windowWidth;
@@ -15,6 +17,10 @@ function setup() {
   createCanvas(size, size).parent(document.getElementById('paint'));
   background(51);
 
+  url_string = window.location.href;
+  url = new URL(url_string);
+  t = url.searchParams.get("t");
+  if(t) tilesCount = t;
   x = document.getElementById("colselect");
 
   colors.push(new ColorType("Černá", 00, 00, 00, colors.length));
