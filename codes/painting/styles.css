@@ -40,7 +40,7 @@ body {
 
 .wrapper {
   width: 33%;
-  text-align: centeFFr;
+  text-align: center;
 }
 
 .section {
@@ -194,6 +194,17 @@ a {
 #brange::-moz-range-thumb {
   background-color: #5555FF;
 }
+
+#rrange::-webkit-slider-thumb {
+  background-color: #FF5555;
+}
+#grange::-webkit-slider-thumb {
+  background-color: #55FF55;
+}
+#brange::-webkit-slider-thumb {
+  background-color: #5555FF;
+}
+
 
 .inputfield {
     vertical-align: middle;
