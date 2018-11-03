@@ -55,3 +55,8 @@ function colFieldChange() {
     ('0000' + parseInt(b.value, 10).toString(16)).slice(-2)).toUpperCase();
   colorPick.style.backgroundColor = colPickName;
 }
+
+function colLabelChange(label, value) {
+  document.getElementById(label).innerHTML = value.toString();
+  console.log("Change value in " + label);
+}

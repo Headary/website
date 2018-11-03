@@ -1,0 +1,68 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Painting tool</title>
+
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="styles.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Ubuntu" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
+	<script src="sketch.js"></script>
+	<script src="ui.js"></script>
+	<script src="../tile.js"></script>
+	<script src="../color.js"></script>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="">
+			<input type="text" id="input_string" name="input_string" value="" placeholder="Hexa zápis" class="inputfield button">
+		</div>
+		<div id="list_colors">
+			<div class="item">
+				<p class="text">Barva</p>
+				<p class="text">Zápis</p>
+				<p class="text">Index</p>
+			</div>
+			<hr>
+		</div>
+		<div class="linespace"></div>
+		<div>
+			<p class="text">Jméno barvy:</p>
+			<input type="text" placeholder="Jméno barvy" value="" id="col_name" class="inputfield button">
+			<div class="linespace"></div>
+			<div class="slider-container">
+				<input type="range" min="0" max="255" value="255" class="slider button" id="col_r" oninput="colFieldChange();colLabelChange('colLabelr', this.value)" onchange="colFieldChange()">
+				<p id='colLabelr'>0</p>
+			</div>
+			<div class="slider-container">
+				<input type="range" min="0" max="255" value="20" class="slider button" id="col_g" oninput="colFieldChange(); colLabelChange('colLabelg', this.value);" onchange="colFieldChange()">
+				<p id='colLabelg'>0</p>
+			</div>
+			<div class="slider-container">
+				<input type="range" min="0" max="255" value="180" class="slider button" id="col_b" oninput="colFieldChange(); colLabelChange('colLabelb', this.value);" onchange="colFieldChange()">
+				<p id='colLabelb'>0</p>
+			</div>
+			<div class="slider button" id="colorPick"></div>
+			<div class="linespace"></div>
+			<div class="button" onclick="addColor()">
+				<p>Přidat barvu</p>
+			</div>
+			<hr>
+			<div class="button" onclick="genCodes()">
+				<p>Generovat</p>
+			</div>
+			<div id="canvas"></div>
+		</div>
+</body>
+
+</html>

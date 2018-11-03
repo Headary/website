@@ -45,18 +45,29 @@
 		</div>
 	</div>
 	<div class="bottom-content">
-		<div class="linespace" id="specialline"><hr class="line"></div>
+		<div class="linespace" id="specialline">
+			<hr class="line">
+		</div>
 		<p>Jméno barvy:</p>
 		<input type="text" placeholder="Jméno barvy" value="" id="colname" class="inputfield button">
 		<div class="linespace"></div>
 		<div class="slider-container">
-			<input type="range" min="0" max="255" value="255" class="slider button" id="rrange" oninput="colFieldChange()" onchange="colFieldChange()">
+			<input type="range" min="0" max="255" value="255" class="slider button" id="rrange"
+			oninput="colFieldChange();colLabelChange('colLabelr', this.value)"
+			onchange="colFieldChange()">
+			<p id='colLabelr'>0</p>
 		</div>
 		<div class="slider-container">
-			<input type="range" min="0" max="255" value="20" class="slider button" id="grange" oninput="colFieldChange()" onchange="colFieldChange()">
+			<input type="range" min="0" max="255" value="20" class="slider button" id="grange"
+			oninput="colFieldChange(); colLabelChange('colLabelg', this.value);"
+			onchange="colFieldChange()">
+			<p id='colLabelg'>0</p>
 		</div>
 		<div class="slider-container">
-			<input type="range" min="0" max="255" value="180" class="slider button" id="brange" oninput="colFieldChange()" onchange="colFieldChange()">
+			<input type="range" min="0" max="255" value="180" class="slider button" id="brange"
+			oninput="colFieldChange(); colLabelChange('colLabelb', this.value);"
+			onchange="colFieldChange()">
+			<p id='colLabelb'>0</p>
 		</div>
 		<div class="slider button" id="colorPick"></div>
 		<div class="linespace"></div>

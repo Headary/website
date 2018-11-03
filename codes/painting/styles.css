@@ -148,21 +148,49 @@ a {
 .slider-container {
   width: 100%;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
 
+#colorPick {
+  padding: auto;
+  margin: auto;
+}
+.slider-container>p {
+  font-family: "Ubuntu";
+  font-size: 120%;
+  text-align: left;
+  width: 17%;
+  margin: 10px;
+  background: white;
+}
 .slider {
   -webkit-appearance: none;
   width: 65%;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-right: 5px;
   height: 25px;
   background: white;
   outline: none;
   border-radius: 15px;
   -webkit-transition: .3s;
   transition: background 300ms, color 300ms;
+}
+
+@media only screen and (max-width:550px) {
+  .slider{
+    width: 80%;
+    padding: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+  }
+  .slider-container>p {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .slider::-webkit-slider-thumb {
@@ -205,6 +233,25 @@ a {
   background-color: #5555FF;
 }
 
+#col_r::-moz-range-thumb {
+  background-color: #FF5555;
+}
+#col_g::-moz-range-thumb {
+  background-color: #55FF55;
+}
+#col_b::-moz-range-thumb {
+  background-color: #5555FF;
+}
+
+#col_r::-webkit-slider-thumb {
+  background-color: #FF5555;
+}
+#col_g::-webkit-slider-thumb {
+  background-color: #55FF55;
+}
+#col_b::-webkit-slider-thumb {
+  background-color: #5555FF;
+}
 
 .inputfield {
     vertical-align: middle;

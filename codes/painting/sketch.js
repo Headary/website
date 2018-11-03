@@ -46,6 +46,9 @@ function setup() {
   setCol();
 
   colFieldChange();
+  colLabelChange('colLabelr', r.value);
+  colLabelChange('colLabelg', g.value);
+  colLabelChange('colLabelb', b.value);
 }
 
 function mousePressed() {
@@ -149,11 +152,7 @@ function countRepeatingIndex() {
 
     let binary = ct2 + id2;
     //console.log(binary + " | " + Math.ceil(binary.length / 4));
-    for (var j = 0; j < Math.ceil(binary.length / 4); j++) {
-      let lastFourCharracters = ("0000" + binary).slice(-4);
-      binary = ("0000" + binary).slice(0, -4);
-      hexaIndexString = parseInt(lastFourCharracters, 2).toString(16).toUpperCase() + hexaIndexString;
-    }
+    hexaIndexString = parseInt(binary,2).toString(16);
     shortenHexa += hexaIndexString + ", ";
     //console.log(shortenIndexArray[i].count + " * " + shortenIndexArray[i].index + " | " + hexaIndexString);
   }

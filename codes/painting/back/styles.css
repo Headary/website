@@ -1,0 +1,75 @@
+html {
+  overflow: auto;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+}
+
+.text, .item>p {
+  font-family: "Ubuntu";
+  font-size: 120%;
+  text-align: center;
+  width: 100%;
+  margin: 10px;
+}
+
+hr {
+  width: 90%;
+  height: 2px;
+  background: black;
+}
+
+.wrap {
+  display: list-item;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*  -------- P5 Canvas --------  */
+.p5Canvas {
+  margin-top: 20px;
+}
+
+/*  -------- List of colors --------  */
+#list_colors {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#list_colors>.item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 80%;
+}
+
+/*  -------- Content space if needed --------  */
+.linespace {
+  height: 15px;
+}
+
+/* ----- Inputs ----- */
+.input {
+  color: #444;
+  border: 2px solid #444;
+  width: 20%;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  align-self: center;
+}
+
+.slider {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+#colorPick {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
