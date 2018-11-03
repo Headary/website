@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Painting tool</title>
+	<title>Picture from code</title>
 
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="stylesheet" href="styles.css">
@@ -35,6 +35,7 @@
 			</div>
 			<hr>
 		</div>
+		<hr>
 		<div class="linespace"></div>
 		<div>
 			<p class="text">Jméno barvy:</p>
@@ -56,6 +57,11 @@
 			<div class="linespace"></div>
 			<div class="button" onclick="addColor()">
 				<p>Přidat barvu</p>
+			</div>
+			<hr>
+			<div class="slider-container">
+				<p id='gridsizeLab'>Velikost mřížky:</p>
+				<input type="number" min="2" max="400" value="8" class="inputfield button" id="input_gridsize">
 			</div>
 			<hr>
 			<div class="button" onclick="genCodes()">

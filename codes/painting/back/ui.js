@@ -39,5 +39,5 @@ function colFieldChange() {
 
 function colLabelChange(label, value) {
   document.getElementById(label).innerHTML = value.toString();
-  console.log("Change value in " + label);
+  // console.log("Change value in " + label);
 }

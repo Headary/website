@@ -73,3 +73,21 @@ hr {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+#gridsizeLab {
+  text-align: right;
+}
+
+#input_gridsize {
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width:550px) {
+  #gridsizeLab {
+    text-align: center;
+  }
+  #input_gridsize {
+    margin: auto;
+  }
+}
