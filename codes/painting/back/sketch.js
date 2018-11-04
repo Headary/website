@@ -70,7 +70,6 @@ class repColor {
 }
 
 function genCodes() {
-  background(51);
   codes_multiplies = [];
   codes_individualId = [];
 
@@ -90,10 +89,20 @@ function genCodes() {
   }
 
   inputString = document.getElementById("input_string").value;
+  if (!inputString) {
+    window.alert("Zadejte hexadecimální kód");
+    return;
+  }
   codes_slicedString = inputString.split(", ");
-  // console.table(codes_slicedString);
-  // console.log(parseInt(codes_slicedString[3],16).toString(2));
-  let binaryPlaces = colors[colors.length - 1].index.toString(2).length;
+
+  let binaryPlaces = 0;
+  if (colors.length != 0) {
+    binaryPlaces = colors[colors.length - 1].index.toString(2).length;
+  } else {
+    window.alert("Nastavte barvy v obrázku do tabulky");
+    return;
+  }
+
   for (let i = 0; i < codes_slicedString.length; i++) {
     let binary = parseInt(codes_slicedString[i], 16).toString(2);
     let color_count = parseInt(binary.slice(0, binary.length - binaryPlaces), 2);
@@ -117,7 +126,13 @@ function genCodes() {
 
   let count = min(codes_individualId.length, grid_pixelarray.length);
 
+  background(51);
   for (let i = 0; i < count; i++) {
-    grid_pixelarray[i].changeColor(colors[codes_individualId[i]]);
+    if (colors.length - 1 >= codes_individualId[i])
+      grid_pixelarray[i].changeColor(colors[codes_individualId[i]]);
+    else {
+      window.alert("Vložte VŠECHNY barvy do tabulky.");
+      return;
+    }
   }
 }
