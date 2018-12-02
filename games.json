@@ -28,6 +28,11 @@
       "name": "Pixel Painting",
       "folder": "painting",
       "description": "Learn, how images are coded and compress your own 8x8 image."
+    },
+    {
+      "name": "Chaos Game",
+      "folder": "chaosgame",
+      "description": "Chaos game is a math alogithm that draws a nice pictures. (Url Arg: c - count of point, p - percentage of moving the dot)"
     }
   ]
 }
