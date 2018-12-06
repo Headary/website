@@ -3,6 +3,7 @@ var testpoints = [];
 var distance = 4;
 
 let angle = 0;
+let scale = 1;
 
 function setup() {
 
@@ -23,22 +24,18 @@ function setup() {
   }
 
   createCanvas(windowWidth, windowHeight);
-  calc();
+  scale = min(width,height);
 }
 
 function draw() {
-  calc();
-}
-
-function calc() {
   background(51);
   translate(width / 2, height / 2);
 
   let projected = [];
   for (let i = 0; i < points.length; i++) {
-    let projected4d = points[i].rotateZU(angle).project();
+    let projected4d = points[i].rotate("ZU",angle).project();
     let projected3d = projected4d.project();
-		let projected2d = projected3d.rotateXZ(angle/4).rotateYZ(-PI/16).project().mult(800);
+		let projected2d = projected3d.rotate("XZ",PI/8).rotate("YZ",-PI/16).project().mult(scale*1.5);
     stroke(255);
     strokeWeight(16);
     noFill();
@@ -51,38 +48,32 @@ function calc() {
     projected[i] = projected2d;
   }
 
+  createConnections(projected);
 
-	stroke(255);
+  angle += 0.02;
+  // noLoop();
+}
+
+function createConnections(mat) {
+  stroke(255);
   for (var i = 0; i < 4; i++) {
 		strokeWeight(2);
     for (var k = 0; k < 8; k++) {
-      connect(i + k * 4, ((i + 1) % 4) + k * 4, projected);
-      connect(i + k * 4, ((i + 1) % 4) + k * 4, projected);
+      connect(i + k * 4, ((i + 1) % 4) + k * 4, mat);
     }
 
-		connect(i, i + 4, projected);
-    connect(i + 8, i + 12, projected);
-    connect(i + 16, i + 16 + 4, projected);
-    connect(i + 16 + 8, i + 16 + 12, projected);
-
-		// strokeWeight(2);
-    // stroke(255,0,0);
-    // stroke(0,0,255);
-    // stroke(0,255,0);
-    connect(i, i + 8, projected);
-    connect(i + 4, i + 12, projected);
-    //
-    // stroke(255,255,0);
-    // stroke(0,255,255);
-    connect(i+ 16, i + 8 + 16, projected);
-    connect(i + 4 + 16, i + 12 + 16, projected);
-    //
-    // stroke(230, 170, 30);
-    // strokeWeight(8);
-    connect(i+8,i+16,projected);
-    connect(i+4+8,i+4+16,projected);
+		connect(i, i + 4, mat);
+    connect(i + 8, i + 12, mat);
+    connect(i + 16, i + 16 + 4, mat);
+    connect(i + 16 + 8, i + 16 + 12, mat);
   }
-  angle += 0.02;
+
+  for (var i = 0; i < 8; i++) {
+    connect(i,i+8,mat);
+    connect(i+16,i+16+8,mat);
+    connect(i,i+16,mat);
+    connect(i+8,i+8+16,mat);
+  }
 }
 
 function connect(a, b, mat) {

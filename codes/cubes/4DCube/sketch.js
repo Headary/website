@@ -2,26 +2,23 @@ var points = [];
 var distance = 3;
 
 let angle = 0;
+let scale = 1;
 
 function setup() {
-	points[0]  = new P4Vector(-1, 1,-1,-1);
-	points[1]  = new P4Vector( 1, 1,-1,-1);
-	points[2]  = new P4Vector( 1,-1,-1,-1);
-	points[3]  = new P4Vector(-1,-1,-1,-1);
-	points[4]  = new P4Vector(-1, 1, 1,-1);
-	points[5]  = new P4Vector( 1, 1, 1,-1);
-	points[6]  = new P4Vector( 1,-1, 1,-1);
-	points[7]  = new P4Vector(-1,-1, 1,-1);
-	points[8]  = new P4Vector(-1, 1,-1, 1);
-	points[9]  = new P4Vector( 1, 1,-1, 1);
-	points[10] = new P4Vector( 1,-1,-1, 1);
-	points[11] = new P4Vector(-1,-1,-1, 1);
-	points[12] = new P4Vector(-1, 1, 1, 1);
-	points[13] = new P4Vector( 1, 1, 1, 1);
-	points[14] = new P4Vector( 1,-1, 1, 1);
-	points[15] = new P4Vector(-1,-1, 1, 1);
+	let index = 0;
+	for (var b = 0; b < 2; b++) {
+		let w = ((b == 0) ? 1 : -1);
+		for (var a = 0; a < 2; a++) {
+			let z = ((a == 0) ? 1 : -1);
+			points[index++] = new P4Vector(-1, 1, z, w);
+			points[index++] = new P4Vector( 1, 1, z, w);
+			points[index++] = new P4Vector( 1,-1, z, w);
+			points[index++] = new P4Vector(-1,-1, z, w);
+		}
+	}
 
 	createCanvas(windowWidth, windowHeight);
+	scale = min(width,height);
 }
 
 function draw() {
@@ -31,7 +28,7 @@ function draw() {
 	let projected = [];
 	for (let i = 0; i < points.length; i++) {
 		let projected3d = points[i].rotateZW(angle).project();
-		let projected2d = projected3d.rotateXZ(angle/4).rotateYZ(-PI/16).project().mult(300);
+		let projected2d = projected3d.rotateXZ(angle/4).rotateYZ(-PI/16).project().mult(scale*0.5);
 		stroke(255);
 		strokeWeight(16);
 		noFill();
