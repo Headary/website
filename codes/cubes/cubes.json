@@ -1,0 +1,18 @@
+{
+  "games": [{
+      "name": "4D Cube",
+      "folder": "4DCube",
+      "description": ""
+    },
+    {
+      "name": "5D Cube",
+      "folder": "5DCube",
+      "description": ""
+    },
+    {
+      "name": "6D Cube",
+      "folder": "6DCube/index.html",
+      "description": ""
+    }
+  ]
+}
