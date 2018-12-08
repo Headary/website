@@ -39,7 +39,7 @@ function draw() {
   let projected = [];
   for (let i = 0; i < points.length; i++) {
     let projected6d = points[i].rotate("ZS", angle).project();
-    let projected5d = projected6d.project();
+    let projected5d = projected6d.rotate("WT", angle).project();
     let projected4d = projected5d.project();
     let projected3d = projected4d.project();
     let projected2d = projected3d.rotate("XZ", angle / 8).rotate("YZ", -PI / 16).project().mult(scale * 5);
