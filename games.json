@@ -33,6 +33,11 @@
       "name": "Chaos Game",
       "folder": "chaosgame",
       "description": "Chaos game is a math alogithm that draws a nice pictures. (Url Arg: c - count of point, p - percentage of moving the dot)"
+    },
+    {
+	"name":"XOR Problem",
+	"folder":"neuralnetwork",
+	"description":"XOR Problem solve by simple multilayer neural network."
     }
   ]
 }
