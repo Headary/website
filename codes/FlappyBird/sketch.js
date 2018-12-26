@@ -1,12 +1,12 @@
 let bird;
 let pipes = [];
 
-let gameOver = false;
+let counter = 0;
+let score = 0;
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth*0.8, windowHeight*0.8);
   bird = new Bird();
-  // pipes.push(new Pipe());
 }
 
 function draw() {
@@ -16,31 +16,38 @@ function draw() {
     pipes[i].show();
     pipes[i].update();
 
+    if (pipes[i].x < -this.w * 2) pipes.splice(i, 1);
+
+    if(bird.x >= pipes[i].x-pipes[i].speed/2 && bird.x <= pipes[i].x+pipes[i].speed/2) score++;
+
     if (pipes[i].hits(bird)) {
-      console.log("Hit.");
-      gameOver = true;
+      hit();
+      break;
     }
 
-    if (pipes[i].x < -this.w * 2) pipes.splice(i, 1);
   }
 
   bird.show();
   bird.update();
 
-  if (frameCount % 120 == 0) {
+  if (counter % 120 == 0) {
     pipes.push(new Pipe());
   }
+  counter++;
 
-  if (gameOver) {
-    fill(0, 150);
-    noStroke();
-    rect(0, 0, width, height);
-    stroke(255);
-    fill(255);
-    textAlign(CENTER, CENTER);
-    textSize(32);
-    text("Game over, press F5 to reset.", 0, 0, width, height);
-  }
+  stroke(51);
+  textSize(35);
+  text(score,20,50 );
+
+  noLoop();
+}
+
+function hit() {
+  console.log("Hit.");
+  counter = 0;
+  bird = new Bird();
+  pipes = [];
+  score = 0;
 }
 
 function keyPressed() {

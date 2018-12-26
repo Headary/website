@@ -38,6 +38,10 @@
 	"name":"XOR Problem",
 	"folder":"neuralnetwork",
 	"description":"XOR Problem solve by simple multilayer neural network."
-    }
-  ]
+    },
+    {
+	"name":"Flappy Bird AI",
+	"folder":"neuralevolution",
+	"descripion":"Flappy Bird played by neuroevoluting neural network."
+    }]
 }
